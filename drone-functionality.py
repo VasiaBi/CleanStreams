@@ -2,9 +2,6 @@ import tello_sdk
 import sqlite3
 import json
 
-# Maximum flight time (0 wind / consistent 15kph) for DJI Tello 2.0 in minutes
-max_flight_time = 13
-
 # Connect with drone
 def drone_connect():
     drone = tello_sdk.Tello()
@@ -17,25 +14,9 @@ def drone_quit(drone):
     drone.quit()
     # print ("Drone disconnected")
 
-# Battery level for screen 2a
-def get_battery_level():
-    drone = tello_sdk.Tello()
-    battery_level = drone.get_battery()
-    return battery_level
-    # print ("Battery level: ", battery_level)
-
-# Remaining flight time for screen 2a
-def remaining_flight_time():
-    drone = tello_sdk.Tello()
-    #If percentage is returned, then "/100" is not needed
-    rem_flight_time = max_flight_time*get_battery_level()/100
-    return rem_flight_time
-    # print ("Remaining flight time: ", rem_flight_time)
-
 # Add flight name for screen 2b
 # Do we get the name through python and store it to the database? 
 # Then the flight name and flight notes should be added to the database so that we can get the flight_id
-
 
 # Route points for screen 2c
 def get_starting_point(flight_id):
