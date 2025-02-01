@@ -56,3 +56,5 @@ def get_starting_point():
 
     # Close the connection
     conn.close()
+
+    # Next point
