@@ -2,20 +2,8 @@ import tello_sdk
 import sqlite3
 import json
 
-# Connect with drone
-def drone_connect():
-    drone = tello_sdk.Tello()
-    drone.connect()
-    return drone
-    # print ("Drone connected")
-
-# Quit drone connection
-def drone_quit(drone):
-    drone.quit()
-    # print ("Drone disconnected")
-
 # Route points for screen 2c
-def get_starting_point(flight_id):
+def route_points(flight_id):
     drone = tello_sdk.Tello()
 
     # Connect to the database. Need to replace database name
@@ -23,7 +11,7 @@ def get_starting_point(flight_id):
     cursor = conn.cursor()
 
     # Query to retrieve the JSON data
-    # Assuming the table has two columns, col_flight_id and col_route_points
+    # Assuming the table has the following columns: Autogenerted database ID, col_flight_name, col_flight_date, col_flight_time and col_route_points (JSON data)
     # Replace table name (table_flights) and column names (col_flight_id, col_route_points)
     # col_flight_id: Can we use the flight name combined with current date and time so that it is unique?
     # example col_flight_id
