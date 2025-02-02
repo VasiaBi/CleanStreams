@@ -1,17 +1,13 @@
-import tello_sdk
+from djitellopy import Tello
+# import droneconnect, dronequit
 
-# Connect with drone
-def drone_connect():
-    drone = tello_sdk.Tello()
-    drone.connect()
-    return drone
-    # print ("Drone connected")
+# tello = droneconnect.d_connect()
+
 
 # Get the flight name and flight notes (screen 2b) and store it to the database
-# Also get current dat and time
+# Also get current date and time
 # Database ID is created
+# Are they handled in Python or in the fontend?
 
-# Quit drone connection
-def drone_quit(drone):
-    drone.quit()
-    # print ("Drone disconnected")
+
+# dronequit.d_quit()

@@ -1,6 +1,6 @@
-import tello_sdk
+from djitellopy import Tello
 
 # Quit drone connection
-def drone_quit(drone):
-    drone.quit()
+def d_quit(tello):
+    tello.end()
     # print ("Drone disconnected") to test if it works
