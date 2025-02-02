@@ -49,6 +49,7 @@ def distance(col_flight_id):
         # Assuming an average speed of 15kph
         flight_duration = flight_distance / 15
 
+        # Return to front for screen 3c
         return flight_name, route_points, flight_distance, flight_duration
     
     else:

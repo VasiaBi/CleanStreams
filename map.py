@@ -1,6 +1,5 @@
 from djitellopy import Tello
 
-
 # Connect with drone
 def drone_connect():
     drone = Tello()
