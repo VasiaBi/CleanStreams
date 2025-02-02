@@ -1,7 +1,5 @@
-import tello_sdk
 import sqlite3
 import json
-import math
 
 # User has given the location coordinates and they are stored in the database (handled from the front or from Python?)
 # A pin appears on the map for each given coordinate (handled from the front?)
@@ -9,11 +7,8 @@ import math
 # The following code will get the starting point and the destination point from the database and calculate the distance and the duration of the flight
 
 
-# Distance between the two points, assuming coordinates are in the format: (latitude, longitude)
-# Haversine formula can be used to take into account the Earth's curvative
-# But given the drone's technical specs (flight duration) and the low flying height (for better image processing) we can also use the Euclidean distance formula for simplification purposes
 # Do we get the flight_id from the front?
-def distance(col_flight_id):
+def route_points(col_flight_id):
 
     # Connect to the database. Need to replace database name
     conn = sqlite3.connect('database_name.db')
@@ -38,40 +33,9 @@ def distance(col_flight_id):
         start_point = route_points['route_points'][0]
         end_point = route_points['route_points'][1]
 
-        lat_start = start_point[0]
-        lon_start = start_point[1]
-        lat_end = end_point[0]
-        lon_end = end_point[1]
-
-        # The distance is in units, should be converted to kilometers
-        flight_distance = math.sqrt((lat_end - lat_start) ** 2 + (lon_end - lon_start) ** 2)
-
-        # Assuming an average speed of 15kph
-        flight_duration = flight_distance / 15
-
-        # Return to front for screen 3c
-        return flight_name, route_points, flight_distance, flight_duration
+        return flight_name, start_point, end_point
+        # print(flight_name, start_point, end_point) to test if it works
     
     else:
         return None, None
     
-
-
-        
-#starting_point = JSON[0]
-#drone start flight
-#- takeoff
-
-#end_point = JSON[1]
-#drone end flight
-#- land
-
-#route = x km
-
-#start flight 
-#move
-
-# Route points for screen 2c
-#def route_points(flight_id):
-    drone = tello_sdk.Tello()
-   

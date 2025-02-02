@@ -1,0 +1,8 @@
+col_flight_id: 1
+col_flight_name: Μείλιχος Πάτρα
+col_flight_date: 02/02/2025
+col_flight_time: 15:49
+
+
+coord1 = (38.266575, 21.748228)
+coord2 = (38.266314, 21.751468)
