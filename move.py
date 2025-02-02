@@ -64,18 +64,7 @@ def fly_drone():
     tello.land()
     # print("Drone landed successfully") to test if it works
 
-
-
-
-
-# tello.move_up(x)
-# tello.streamon()
-# tello.move (direction, x)
-# tello.move_back(x)
-# tello.streamoff()
-# tello.land()
-
-# Quit drone connection
-dronequit.drone_quit(tello)
+    # Quit drone connection
+    dronequit.drone_quit(tello)
 
 

@@ -28,5 +28,5 @@ def stream_on():
 def stream_off():
     tello.streamoff()
     # print("Video stream stopped") to test if it works
-    
+
     cv2.destroyAllWindows()
